@@ -1,8 +1,8 @@
 /*
 
    Written by Drew André using Daniel Garcia and Mark Kriegsman's FastLED library.
-   Eagle files..
 
+   Edited by Zombodotcom
 */
 
 
