@@ -35,3 +35,46 @@ void InitWS2812B() {
     fill_solid(leds, NUM_LEDS, CRGB::Black);
   }
 }
+
+
+//number of leds per strip 
+const uint8_t NUM_LEDS = 144;
+
+
+
+//left audio is Analog pin 0  right audio is Analog pin 1
+const uint8_t AUDIO_LEFT_PIN = 0, AUDIO_RIGHT_PIN = 1;
+
+// Strobe pin for msgeq7 is digital pin 4 ; Reset pin for msgeq7 is digital pin 5
+const uint8_t MSGEQ7_STROBE_PIN = 4, MSGEQ7_RESET_PIN = 5;
+
+
+// this would mirror 2 strips at digital pins 7 and 8
+void InitWS2812B() {
+  FastLED.addLeds<WS2812B, 7, GRB>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
+  FastLED.addLeds<WS2812B, 8, GRB>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
+
+  FastLED.setBrightness(BRIGHTNESS);
+  //FastLED.setTemperature(Candle);
+
+  for (int i = 0; i < NUM_LEDS; i++) {
+    fill_solid(leds, NUM_LEDS, CRGB::Black);
+  }
+}
+
+//this makes 4 mirrors
+
+void InitWS2812B() {
+  FastLED.addLeds<WS2812B, 7, GRB>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
+  FastLED.addLeds<WS2812B, 8, GRB>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
+  FastLED.addLeds<WS2812B, 9, GRB>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
+  FastLED.addLeds<WS2812B, 10, GRB>(leds, NUM_LEDS).setCorrection(TypicalSMD5050);
+
+
+  FastLED.setBrightness(BRIGHTNESS);
+  //FastLED.setTemperature(Candle);
+
+  for (int i = 0; i < NUM_LEDS; i++) {
+    fill_solid(leds, NUM_LEDS, CRGB::Black);
+  }
+}
